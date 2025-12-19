@@ -8,7 +8,7 @@ trigger:
       - main
       - feature/*
 
-pool: Sumit_Azure_Pipeline
+pool: Abhi_Azure_Pipeline
 
 pr:
   branches:
@@ -27,9 +27,9 @@ stages:
             provider: 'azurerm'
             command: 'init'
             workingDirectory: '$(System.DefaultWorkingDirectory)/Environment/Dev'
-            backendServiceArm: 'Sumit-Serv-Conn'
+            backendServiceArm: 'Abhi-Serv-Conn'
             backendAzureRmOverrideSubscriptionID: 'b4461466-1e6b-4be2-bb70-1e96a72a41c8'
-            backendAzureRmResourceGroupName: 'Sumit_Backend_RG'
+            backendAzureRmResourceGroupName: 'Abhi_Backend_RG'
             backendAzureRmStorageAccountName: 'mystate'
             backendAzureRmContainerName: 'tfstate'
             backendAzureRmKey: 'terraform.tfstate'
@@ -47,7 +47,7 @@ stages:
             workingDirectory: '$(System.DefaultWorkingDirectory)/Environment/Dev'
             outputTo: 'console'
             customCommand: 'fmt'
-            environmentServiceNameAzureRM: 'Sumit-Serv-Conn'
+            environmentServiceNameAzureRM: 'Abhi-Serv-Conn'
             environmentAzureRmOverrideSubscriptionID: 'b4461466-1e6b-4be2-bb70-1e96a72a41c8'
 
         - task: TerraformTask@5
@@ -55,7 +55,7 @@ stages:
             provider: 'azurerm'
             command: 'plan'
             workingDirectory: '$(System.DefaultWorkingDirectory)/Environment/Dev'
-            environmentServiceNameAzureRM: 'Sumit-Serv-Conn'
+            environmentServiceNameAzureRM: 'Abhi-Serv-Conn'
             environmentAzureRmOverrideSubscriptionID: 'b4461466-1e6b-4be2-bb70-1e96a72a41c8'
 
 
@@ -103,8 +103,8 @@ stages:
         steps:
         - task: ManualValidation@1
           inputs:
-            notifyUsers: 'sumitvats08@brijkishorgupta290gmail.onmicrosoft.com'
-            approvers: 'sumitvats08@brijkishorgupta290gmail.onmicrosoft.com'
+            notifyUsers: 'abhishekdsharma04@brijkishorgupta290gmail.onmicrosoft.com'
+            approvers: 'abhishekdsharma04@brijkishorgupta290gmail.onmicrosoft.com'
 
   - stage: E
     displayName: Infra_Creation
@@ -119,9 +119,9 @@ stages:
             provider: 'azurerm'
             command: 'init'
             workingDirectory: '$(System.DefaultWorkingDirectory)/Environment/Dev'
-            backendServiceArm: 'Sumit-Serv-Conn'
+            backendServiceArm: 'Abhi-Serv-Conn'
             backendAzureRmOverrideSubscriptionID: 'b4461466-1e6b-4be2-bb70-1e96a72a41c8'
-            backendAzureRmResourceGroupName: 'Sumit_Backend_RG'
+            backendAzureRmResourceGroupName: 'Abhi_Backend_RG'
             backendAzureRmStorageAccountName: 'mystate'
             backendAzureRmContainerName: 'tfstate'
             backendAzureRmKey: 'terraform.tfstate'
@@ -132,7 +132,7 @@ stages:
             command: 'apply'
             workingDirectory: '$(System.DefaultWorkingDirectory)/Environment/Dev'
             commandOptions: '--auto-approve'
-            environmentServiceNameAzureRM: 'Sumit-Serv-Conn'
+            environmentServiceNameAzureRM: 'Abhi-Serv-Conn'
             environmentAzureRmOverrideSubscriptionID: 'b4461466-1e6b-4be2-bb70-1e96a72a41c8'
 
   - stage: F
@@ -146,9 +146,9 @@ stages:
             provider: 'azurerm'
             command: 'init'
             workingDirectory: '$(System.DefaultWorkingDirectory)/Environment/Dev'
-            backendServiceArm: 'Sumit-Serv-Conn'
+            backendServiceArm: 'Abhi-Serv-Conn'
             backendAzureRmOverrideSubscriptionID: 'b4461466-1e6b-4be2-bb70-1e96a72a41c8'
-            backendAzureRmResourceGroupName: 'Sumit_Backend_RG'
+            backendAzureRmResourceGroupName: 'Abhi_Backend_RG'
             backendAzureRmStorageAccountName: 'mystate'
             backendAzureRmContainerName: 'tfstate'
             backendAzureRmKey: 'terraform.tfstate'
@@ -159,5 +159,5 @@ stages:
             command: 'destroy'
             workingDirectory: '$(System.DefaultWorkingDirectory)/Environment/Dev'
             commandOptions: '--auto-approve'
-            environmentServiceNameAzureRM: 'Sumit-Serv-Conn'
+            environmentServiceNameAzureRM: 'Abhi-Serv-Conn'
             environmentAzureRmOverrideSubscriptionID: 'b4461466-1e6b-4be2-bb70-1e96a72a41c8'
